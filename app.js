@@ -1,5 +1,6 @@
 const axios = require("axios");
 const cheerio = require("cheerio");
+const fs = require("fs");
 
 const url = "https://writing9.com/ielts-writing-samples";
 
@@ -73,7 +74,8 @@ const scrapeData = async (url) => {
 const main = async () => {
   const data = await scrapeData(url);
   if (data) {
-    console.log(JSON.stringify(data, null, 2));
+    fs.writeFileSync("output.json", JSON.stringify(data, null, 2), "utf-8");
+    console.log("Data has been written to output.json");
   }
 };
 
