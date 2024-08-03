@@ -53,7 +53,7 @@ const scrapeData = async (url) => {
         });
 
         return {
-          score: parseFloat(scores[index]),
+          overall_band_score: parseFloat(scores[index]),
           essay: essay,
           scores: scoresArray,
           feedbacks: feedbacksArray,
